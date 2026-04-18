@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김현중 ♥ 이연우 결혼합니다</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  color: #333;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── COVER ── */
+#cover {
+  position: relative;
+  height: 100svh;
+  min-height: 580px;
+  overflow: hidden;
+}
+#cover .cover-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+#cover .cover-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05) 0%,
+    rgba(0,0,0,0.1)  40%,
+    rgba(0,0,0,0.55) 70%,
+    rgba(0,0,0,0.78) 100%
+  );
+}
+#cover .cover-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 48px 32px 0;
+}
+.cover-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 76px;
+  line-height: 1.05;
+  color: white;
+}
+#cover .cover-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 32px 56px;
+  color: white;
+  text-align: center;
+}
+.cover-names {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  color: white;
+  margin-bottom: 16px;
+}
+.cover-meta {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 6px;
+}
+.cover-scroll {
+  position: absolute;
+  bottom: 18px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.45);
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(5px); }
+}
+
+/* ── SECTION BASE ── */
+section {
+  padding: 60px 28px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* ── INVITATION ── */
+.sec-small {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: #bbb;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.inv-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: #222;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.inv-poem {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 2.2;
+  word-break: keep-all;
+  max-width: 280px;
+  margin: 0 auto;
+}
+.inv-poem p {
+  margin: 0 0 8px;
+}
+.inv-poem-source {
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+  margin: 14px 0 36px;
+  letter-spacing: 1px;
+}
+.inv-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.inv-photo img { width: 100%; height: 100%; object-fit: cover; }
+.inv-main-text {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  line-height: 2.2;
+  word-break: keep-all;
+  max-width: 260px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.family-block {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+}
+.family-side {
+  flex: 1;
+  text-align: center;
+  line-height: 2;
+  color: #444;
+}
+.family-block .parent-line { font-size: 13px; color: #999; }
+.family-block .name-line { font-size: 15px; color: #222; font-weight: 400; }
+.family-sep {
+  width: 1px;
+  align-self: stretch;
+  background: #e8e8e8;
+  margin: 4px 16px;
+  flex-shrink: 0;
+}
+
+/* ── DATE ── */
+.date-display {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.date-big {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 10px;
+}
+.date-sub {
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 1px;
+}
+.calendar {
+  max-width: 320px;
+  margin: 0 auto 32px;
+}
+.cal-month-label {
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 4px;
+}
+.cal-dow {
+  text-align: center;
+  font-size: 11px;
+  color: #bbb;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+}
+.cal-dow.sun { color: #8090c8; }
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #555;
+  border-radius: 50%;
+}
+.cal-day.sun  { color: #8090c8; }
+.cal-day.empty { visibility: hidden; }
+.cal-day.wedding {
+  background: #2c3e6b;
+  color: white;
+  font-weight: 400;
+}
+.divider { border: none; border-top: 1px solid #f0f0f0; margin: 28px 0; }
+.countdown { text-align: center; }
+.countdown-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.cd-block {
+  padding: 0 20px;
+  border-right: 1px solid #efefef;
+  text-align: center;
+}
+.cd-block:last-child { border-right: none; }
+.cd-label { font-size: 10px; letter-spacing: 3px; color: #ccc; margin-bottom: 8px; }
+.cd-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #222;
+}
+.cd-msg { font-size: 13px; color: #999; line-height: 2; }
+
+/* ── LOCATION ── */
+.venue-name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.venue-addr {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  line-height: 2;
+  margin-bottom: 24px;
+}
+.map-box {
+  width: 100%;
+  height: 220px;
+  background: #e8e4df;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #999;
+  font-size: 13px;
+}
+.map-alt-btn {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.nav-section { margin-bottom: 28px; }
+.nav-title { font-size: 15px; font-weight: 500; color: #222; margin-bottom: 6px; }
+.nav-sub  { font-size: 12px; color: #bbb; margin-bottom: 14px; }
+.nav-btns { display: flex; gap: 8px; }
+.nav-btn {
+  flex: 1;
+  padding: 13px 6px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background: white;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  color: #444;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.transport-section { margin-top: 28px; }
+.transport-ttl { font-size: 15px; font-weight: 500; color: #222; margin-bottom: 14px; }
+.t-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+.t-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* ── ACCOUNT ── */
+.acc-text {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  line-height: 2;
+  margin-bottom: 4px;
+}
+.acc-toggle {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+.acc-list { display: none; margin-top: 14px; }
+.acc-list.open { display: block; }
+.acc-item {
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #fafafa;
+  overflow: hidden;
+}
+.acc-who  { font-size: 12px; color: #bbb; margin-bottom: 6px; letter-spacing: 1px; }
+.acc-num  { font-size: 15px; color: #222; }
+.acc-bank { font-size: 12px; color: #ccc; margin-top: 3px; }
+.copy-btn {
+  float: right;
+  font-size: 11px;
+  color: #888;
+  background: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* ── GALLERY ── */
+.gallery-section { padding: 60px 0 0; }
+.gallery-label {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: #bbb;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.gallery-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gallery-slider::-webkit-scrollbar { display: none; }
+.gallery-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 0 60px;
+}
+.gallery-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.3s;
+}
+.gallery-dot.active { background: #2c3e6b; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 52px 28px 40px;
+  text-align: center;
+  background: #f9f9f9;
+}
+.footer-script {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  color: #2c3e6b;
+  margin-bottom: 14px;
+}
+.footer-date { font-size: 12px; color: #bbb; letter-spacing: 4px; }
+.footer-venue {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 18px;
+  line-height: 2;
+}
+
+/* ── FADE IN ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ── COVER ── -->
+<div id="cover">
+  <img class="cover-photo" src="cover.jpg" alt="김현중 이연우">
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <div class="cover-names">김현중 · 이연우</div>
+    <div class="cover-meta">2026.09.12 SAT 11:00</div>
+    <div class="cover-meta">그레이스파티 인천</div>
+  </div>
+  <span class="cover-scroll">scroll ↓</span>
+</div>
+
+<!-- ── INVITATION ── -->
+<section class="fade-in">
+
+  <p style="text-align:center;font-size:11px;letter-spacing:4px;color:#bbb;margin-bottom:24px;">INVITATION</p>
+
+  <div class="inv-poem">
+    <p>서로 다른 길을 걸어오던 두 사람이<br>한 빛 안에서 같은 길을 걷기로 했습니다.</p>
+    <p>세상 가운데 하나의 작은 빛으로<br>살아내는 가정을 이루겠습니다.</p>
+  </div>
+
+  <div class="inv-photo" style="margin-top:36px">
+    <img src="photo.jpg" alt="김현중 이연우">
+  </div>
+
+  <div class="inv-poem-source" style="margin-top:36px; color:#aaa; line-height:2;">
+    대저 생명의 원천이 주께 있사오니<br>
+    주의 광명 중에 우리가 광명을 보리이다<br>
+    <span style="letter-spacing:2px;">시편 36:9</span>
+  </div>
+
+  <div class="family-block">
+    <div class="family-side">
+      <p class="parent-line">김용배 · 송경숙의 아들</p>
+      <p class="name-line">김현중</p>
+    </div>
+    <div class="family-sep"></div>
+    <div class="family-side">
+      <p class="parent-line">이창우 · 허미숙의 딸</p>
+      <p class="name-line">이연우</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── DATE ── -->
+<section class="fade-in">
+  <div class="date-display">
+    <div class="date-big">2026.09.12</div>
+    <div class="date-sub">토요일 오전 11시</div>
+  </div>
+
+  <div class="calendar">
+    <div class="cal-month-label">2026. 09</div>
+    <div class="cal-grid">
+      <!-- DOW headers -->
+      <div class="cal-dow sun">일</div>
+      <div class="cal-dow">월</div>
+      <div class="cal-dow">화</div>
+      <div class="cal-dow">수</div>
+      <div class="cal-dow">목</div>
+      <div class="cal-dow">금</div>
+      <div class="cal-dow">토</div>
+      <!-- Sep 2026: starts Tuesday → 2 empty cells -->
+      <div class="cal-day empty">-</div>
+      <div class="cal-day empty">-</div>
+      <div class="cal-day">1</div>
+      <div class="cal-day">2</div>
+      <div class="cal-day">3</div>
+      <div class="cal-day">4</div>
+      <div class="cal-day">5</div>
+      <div class="cal-day sun">6</div>
+      <div class="cal-day">7</div>
+      <div class="cal-day">8</div>
+      <div class="cal-day">9</div>
+      <div class="cal-day">10</div>
+      <div class="cal-day">11</div>
+      <div class="cal-day wedding">12</div>
+      <div class="cal-day sun">13</div>
+      <div class="cal-day">14</div>
+      <div class="cal-day">15</div>
+      <div class="cal-day">16</div>
+      <div class="cal-day">17</div>
+      <div class="cal-day">18</div>
+      <div class="cal-day">19</div>
+      <div class="cal-day sun">20</div>
+      <div class="cal-day">21</div>
+      <div class="cal-day">22</div>
+      <div class="cal-day">23</div>
+      <div class="cal-day">24</div>
+      <div class="cal-day">25</div>
+      <div class="cal-day">26</div>
+      <div class="cal-day sun">27</div>
+      <div class="cal-day">28</div>
+      <div class="cal-day">29</div>
+      <div class="cal-day">30</div>
+    </div>
+  </div>
+
+
+  <div class="countdown">
+    <div class="countdown-row">
+      <div class="cd-block"><div class="cd-label">DAYS</div><div class="cd-num" id="cd-d">-</div></div>
+      <div class="cd-block"><div class="cd-label">HOUR</div><div class="cd-num" id="cd-h">-</div></div>
+      <div class="cd-block"><div class="cd-label">MIN</div><div class="cd-num" id="cd-m">-</div></div>
+      <div class="cd-block"><div class="cd-label">SEC</div><div class="cd-num" id="cd-s">-</div></div>
+    </div>
+    <p class="cd-msg">결혼식이 <strong id="cd-days2">-</strong>일 남았습니다.</p>
+  </div>
+</section>
+
+<!-- ── LOCATION ── -->
+<section class="fade-in">
+  <div class="venue-name">그레이스파티 인천</div>
+  <p class="venue-addr">인천광역시 부평구 광장로 16 부평역사 5층</p>
+
+  <div class="map-box" style="padding:0;background:transparent;height:auto;">
+    <img src="map.png" alt="그레이스파티 인천 약도" style="width:100%;display:block;border-radius:8px;">
+  </div>
+
+
+  <div class="transport-section">
+    <div class="transport-ttl">지하철</div>
+    <div class="t-item">
+      <div class="t-dot" style="background:#555"></div>
+      <span>서울 <strong>1호선</strong> · 인천 지하철 <strong>부평역</strong> 하차<br>부평역사 쇼핑몰 5층 그레이스파티 인천점</span>
+    </div>
+  </div>
+  <div class="transport-section" style="margin-top:20px">
+    <div class="transport-ttl">자가용</div>
+    <div class="t-item">
+      <div class="t-dot" style="background:#2c3e6b"></div>
+      <span>내비게이션 <strong>"그레이스파티 인천점"</strong> 또는 <strong>"부평역사쇼핑몰"</strong> 입력<br>
+      <span style="font-size:12px;color:#bbb">주소 : 인천 부평구 광장로 16</span></span>
+    </div>
+    <div class="t-item">
+      <div class="t-dot" style="background:#2c3e6b"></div>
+      <span>주차 2시간 무료 (웨딩홀에서 주차확인 필요)<br>
+      <span style="font-size:12px;color:#bbb">롯데마트 주차 가능 · 교통 혼잡 시 대중교통 권장</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ── GIFT ── -->
+<section class="fade-in">
+  <h2 class="inv-title" style="font-size:20px;margin-bottom:8px">마음 전하실 곳</h2>
+
+  <button class="acc-toggle" onclick="toggleAccount(this)">계좌번호 확인하기</button>
+  <div class="acc-list" id="accountList">
+    <div class="acc-item">
+      <div class="acc-who">신랑 김현중</div>
+      <div class="acc-num">000-0000-0000-00 <button class="copy-btn" onclick="copyText('000-0000-0000-00')">복사</button></div>
+      <div class="acc-bank">○○은행</div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-who">신부 이연우</div>
+      <div class="acc-num">000-0000-0000-00 <button class="copy-btn" onclick="copyText('000-0000-0000-00')">복사</button></div>
+      <div class="acc-bank">○○은행</div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-who">신랑 아버지 ○○○</div>
+      <div class="acc-num">000-0000-0000-00 <button class="copy-btn" onclick="copyText('000-0000-0000-00')">복사</button></div>
+      <div class="acc-bank">○○은행</div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-who">신부 아버지 ○○○</div>
+      <div class="acc-num">000-0000-0000-00 <button class="copy-btn" onclick="copyText('000-0000-0000-00')">복사</button></div>
+      <div class="acc-bank">○○은행</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<div class="gallery-section fade-in">
+  <div class="gallery-slider" id="gallerySlider">
+    <div class="gallery-slide"><img src="gallery/KakaoTalk_Photo_2026-04-05-20-47-39 001.jpeg" alt="1"></div>
+    <div class="gallery-slide"><img src="gallery/KakaoTalk_Photo_2026-04-05-20-47-40 002.jpeg" alt="2"></div>
+    <div class="gallery-slide"><img src="gallery/KakaoTalk_Photo_2026-04-05-20-47-40 003.jpeg" alt="3"></div>
+    <div class="gallery-slide"><img src="gallery/KakaoTalk_Photo_2026-04-05-20-47-41 004.jpeg" alt="4"></div>
+  </div>
+  <div class="gallery-dots" id="galleryDots">
+    <div class="gallery-dot active"></div>
+    <div class="gallery-dot"></div>
+    <div class="gallery-dot"></div>
+    <div class="gallery-dot"></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-script">김현중 · 이연우</div>
+  <p class="footer-date">2026 · 09 · 12 · SAT · 11:00 AM</p>
+  <p class="footer-venue">
+    그레이스파티 인천<br>
+    인천광역시 부평구 광장로 16 부평역사 5층
+  </p>
+</footer>
+
+<script>
+// ── Countdown
+function updateCountdown() {
+  const wedding = new Date('2026-09-12T11:00:00');
+  const now = new Date();
+  const diff = wedding - now;
+  if (diff <= 0) {
+    document.getElementById('cd-d').textContent = '0';
+    document.getElementById('cd-h').textContent = '00';
+    document.getElementById('cd-m').textContent = '00';
+    document.getElementById('cd-s').textContent = '00';
+    document.getElementById('cd-days2').textContent = '0';
+    return;
+  }
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000)  / 60000);
+  const secs  = Math.floor((diff % 60000)    / 1000);
+  document.getElementById('cd-d').textContent = days;
+  document.getElementById('cd-h').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(secs).padStart(2,'0');
+  document.getElementById('cd-days2').textContent = days;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── Account toggle
+function toggleAccount(btn) {
+  const list = document.getElementById('accountList');
+  list.classList.toggle('open');
+  btn.textContent = list.classList.contains('open') ? '닫기' : '계좌번호 확인하기';
+}
+
+// ── Copy
+function copyText(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => showToast('복사되었습니다'))
+    .catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('복사되었습니다');
+    });
+}
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div'); t.id = 'toast';
+    t.style.cssText = [
+      'position:fixed','bottom:40px','left:50%','transform:translateX(-50%)',
+      'background:#333','color:#fff','padding:10px 24px','font-size:12px',
+      'letter-spacing:2px','font-family:"Noto Sans KR",sans-serif',
+      'opacity:0','transition:opacity 0.3s','pointer-events:none',
+      'z-index:999','border-radius:4px'
+    ].join(';');
+    document.body.appendChild(t);
+  }
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(() => t.style.opacity = '0', 2000);
+}
+
+// ── Gallery
+const slider = document.getElementById('gallerySlider');
+const dots = document.querySelectorAll('.gallery-dot');
+let currentSlide = 0;
+const totalSlides = 4;
+let autoTimer;
+
+function goToSlide(index) {
+  currentSlide = (index + totalSlides) % totalSlides;
+  slider.scrollTo({ left: currentSlide * slider.offsetWidth, behavior: 'smooth' });
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+
+function startAuto() {
+  autoTimer = setInterval(() => goToSlide(currentSlide + 1), 3000);
+}
+
+if (slider) {
+  startAuto();
+  slider.addEventListener('scroll', () => {
+    const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+    if (index !== currentSlide) {
+      currentSlide = index;
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+  }, { passive: true });
+  // 손으로 넘길 때 타이머 리셋
+  slider.addEventListener('touchstart', () => { clearInterval(autoTimer); }, { passive: true });
+  slider.addEventListener('touchend', () => { startAuto(); }, { passive: true });
+}
+
+// ── Fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
